@@ -1,0 +1,36 @@
+-- Selecting the country and counting the number of customers in each country
+SELECT
+  D.country,
+  COUNT(customer_id) AS "number of customers"
+FROM
+  customer A
+  INNER JOIN address B ON A.address_id = B.address_id -- Joining customer with address based on address_id
+  INNER JOIN city C ON B.city_id = C.city_id -- Joining address with city based on city_id
+  INNER JOIN country D ON C.country_id = D.country_id -- Joining city with country based on country_id
+GROUP BY
+  country -- Grouping the results by country
+ORDER BY
+  COUNT(customer_id) DESC -- Sorting the results in descending order based on the number of customers
+LIMIT 10 -- Limiting the results to the top 10 countries with the highest number of customers
+
+
+-- Selecting the country, city, and the count of customers in each city
+SELECT 
+  D.country, -- Country of the city
+  C.city, -- City name
+  COUNT(customer_id) AS "number of customers" -- Count of customers in each city
+FROM 
+  customer A -- Customer table
+INNER JOIN 
+  address B ON A.address_id = B.address_id -- Joining customer with address table based on address_id
+INNER JOIN 
+  city C ON B.city_id = C.city_id -- Joining address with city table based on city_id
+INNER JOIN 
+  country D ON C.country_id = D.country_id -- Joining city with country table based on country_id
+WHERE 
+  country IN ('India','China','United States','Japan','Mexico','Brazil','Russian Federation','Phillippines','Turkey','Indonesia') -- Filtering countries to the specified list
+GROUP BY 
+  country, city -- Grouping the results by country and city
+ORDER BY 
+  COUNT(customer_id) DESC -- Sorting the results in descending order based on the count of customers
+LIMIT 10 -- Limiting the results to the top 10 cities with the highest number of customers
