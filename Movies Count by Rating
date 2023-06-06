@@ -1,0 +1,5 @@
+# SQL query that pulls the top 5 customers from the top 10 cities in the top 10 countries and sorts the countries in order of most top 5 customers
+SELECT rating, COUNT(film_id) AS count_of_movies
+FROM film
+GROUP BY rating
+
