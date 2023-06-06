@@ -1,0 +1,15 @@
+#SQL query to understand descriptive statistics.
+
+SELECT MIN(rental_duration) AS minimum_rental_duration,				
+	   MAX(rental_duration) AS maximum_rental_duration,			
+	   AVG(rental_duration) AS average_rental_duration,			
+	   MIN(rental_rate) AS minimum_rental_rate,			
+	   MAX(rental_rate) AS maximum_rental_rate,			
+	   AVG(rental_rate) AS average_rental_rate,			
+	   MIN(length) AS minimum_length,			
+	   MAX(length) AS maximum_length,			
+	   AVG(length) AS average_length,			
+	   COUNT(*) AS count_movies,			
+	   MODE() WITHIN GROUP (ORDER BY rating)			
+	       AS mode_rating			
+FROM film				
