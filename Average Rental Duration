@@ -1,0 +1,14 @@
+-- Selecting the movie genre name and calculating the average rental duration for each genre
+SELECT 
+  C.name AS movie_genre, -- Alias for the movie genre name
+  AVG(A.rental_duration) AS average_rental_duration -- Calculating the average rental duration for each genre
+FROM 
+  film A -- Film table
+INNER JOIN 
+  film_category B ON A.film_id = B.film_id -- Joining film with film_category table based on film_id
+INNER JOIN 
+  category C ON B.category_id = C.category_id -- Joining film_category with category table based on category_id
+GROUP BY 
+  C.name -- Grouping the results by movie genre name
+ORDER BY 
+  AVG(A.rental_duration) DESC; -- Sorting the results in descending order based on the average rental duration
