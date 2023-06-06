@@ -12,6 +12,11 @@ The Rockbuster Stealth Management Board has asked a series of business questions
 ## Dataset:
 This data set that contains information about Rockbuster’s film inventory, customers, and payments, among other things. 
   * [Download Rockbuster Dataset here](../C:\Users\User01)
+  * [Data Dictionary](./)
+  
+## Unleashing Data Insights with Tableau's Storytelling Power: 
+[Click here to view Rockbuster's Story on Tableau Public](https://public.tableau.com/app/profile/malvika.mall/viz/RockbusterStealthLLC_BusinessStrategy/ROCKBUSTERSTEALTHDATAANALYSISPROJECT)
+
 ## Analysis Criteria
 * Writing moderately complex SQL queries to answer business questions.
 * Presenting SQL results to business managers by creating visualizations and telling a compelling story.
